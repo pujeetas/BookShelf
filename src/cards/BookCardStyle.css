@@ -1,0 +1,84 @@
+.book-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.book-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: calc(var(--radius) + 2px);
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    transition: all 0.2s ease-in-out;
+    list-style: none;
+}
+
+.book-card:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transform: translateY(-2px);
+}
+
+.book-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: hsl(var(--card-foreground));
+    margin-bottom: 0.5rem;
+}
+
+.book-author {
+    color: hsl(var(--muted-foreground));
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.book-date {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.875rem;
+}
+
+/* Delete button */
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    transform: scale(1.1);
+}
+
+.delete-button:active {
+    animation: shake 0.3s;
+}
+
+/* Shake animation on click */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.title-delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
